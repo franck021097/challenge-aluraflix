@@ -234,6 +234,7 @@ const NuevoVideo = () => {
                     break;
                 
                 default:
+                    
                     break;
             }
 
@@ -241,6 +242,26 @@ const NuevoVideo = () => {
         
     }
 
+    const LimpiarCampos = () =>{
+        setNombre("")
+        setImagen("")
+        setCategoria("")
+        setVideo("")
+        setDescripcion("")
+
+        const LimpiarMensajes = [
+            {campo: "nombre", valorValido: "inicial", mensaje: ""},
+            {campo: "categoria", valorValido: "inicial", mensaje: ""},
+            {campo: "imagen", valorValido: "inicial", mensaje: ""},
+            {campo: "video", valorValido: "inicial", mensaje: ""},
+            {campo: "descripcion", valorValido: "inicial", mensaje: ""}
+        ]
+
+        console.log("limpiar");
+        console.log(LimpiarMensajes);
+
+        mensajesError(LimpiarMensajes)
+    }
 
     if(regresaAHome){
         const id = uuidv4()
@@ -301,7 +322,7 @@ const NuevoVideo = () => {
                 <BotonFormulario className="botones-nuevo-video" irAValidar={(e)=>{
                     validarCampos(e)
                 }} value="Guardar" />
-                <BotonFormulario  irAValidar={()=>console.log("algo")} className="botones-nuevo-video" value="limpiar"/>
+                <BotonFormulario  irAValidar={()=>LimpiarCampos()} className="botones-nuevo-video" value="limpiar"/>
             </div>
             
         </ContainerFormulario>

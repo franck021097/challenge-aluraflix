@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import ItemInfo from "./ItemInfo"
+import Categoria from "../Categoria"
 
 const SectionInfo = styled.section`
     background: url("img/fondo-info.png");
@@ -14,6 +15,7 @@ const SectionInfo = styled.section`
 
 const SectionCategories = styled.section`
     background: #262626;
+    padding: 50px 0;
 `
 
 
@@ -23,7 +25,7 @@ const Main = ()=>{
             <ItemInfo/>
         </SectionInfo>
         <SectionCategories>
-            Area categorias
+            <Categoria/>
         </SectionCategories>
     </>
 }

@@ -3,7 +3,6 @@ import LogoAluraFLix from "../Logo"
 import { Link, useLocation } from "react-router-dom"
 import { useState } from "react"
 
-
 export const ContainerEstilizado = styled.div `
     display: flex;
     background: #090f16;
@@ -51,31 +50,33 @@ const BotonEstilizado = styled.button`
     text-transform: uppercase;
 `
 
-
-
-const Header = ({ btnActivo, activo}) => {
+const Header = () => {
 
     const location = useLocation();
     const [botonActivo, setBotonActivo] = useState([{path: "/", boton: "home", activo: false}, {path: "/NuevoVideo", boton: "Nuevo Video", activo: false}])
 
-    let btnAct;
-    
-    //console.log(btnActivo);
-        if(btnActivo){
-            const botonActivoNuevo = botonActivo.map( (boton) => {
-                if(boton.path == "/NuevoVideo" && location.pathname == "/NuevoVideo"){
-                    console.log(boton.path);
-                    boton.activo = true
-                }else if(boton.path == "/" && location.pathname != "/NuevoVideo"){
-                    boton.activo = true
-                }
+    if(location.pathname == "/NuevoVideo"){
+        botonActivo.map( (boton) => {
+            if(boton.path == "/NuevoVideo" && location.pathname == "/NuevoVideo"){
+                console.log(location.pathname);
+                boton.activo = true
+            }else{
+                boton.activo = false
+            }
+        })
+    }
+    if(location.pathname == "/"){
+        botonActivo.map( (boton) => {
+            if(boton.path == "/" && location.pathname == "/"){
+                console.log("location.pathname");
+                console.log(location.pathname);
+                boton.activo = true
+            }else{
+                boton.activo = false
+            }
+        })
+    }
 
-                return boton
-            })
-    
-            setBotonActivo(botonActivoNuevo)
-            btnAct = false
-        }
 
     const actualizarBoton = (btn) => {
         const nuevoBtnActivo = botonActivo.map(
@@ -90,8 +91,7 @@ const Header = ({ btnActivo, activo}) => {
         
     }
 
-    return <>
-    <ContainerEstilizado $tipo="Header" activo={btnAct}>
+    return <ContainerEstilizado $tipo="Header" >
         <LogoAluraFLix/>
 
         <div className="botones-header-flex">
@@ -105,7 +105,6 @@ const Header = ({ btnActivo, activo}) => {
             }
         </div>
     </ContainerEstilizado>
-    </>
 }
 
 export default Header

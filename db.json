@@ -8,19 +8,25 @@
       "descripcion": "lorem ipsum"
     },
     {
-      "id": "3c166930-0696-42c0-b1b3-4ec4c9640c20",
-      "titulo": "Titulo registo",
+      "id": "9cff1708-00df-44f5-b669-cdc7e5566c6c",
+      "titulo": "titulo nuevo",
       "categoria": "Front end",
-      "imagen": "Imagen nueva",
-      "descripcion": "Descripcion",
-      "video": "Video nuevo"
+      "imagen": "Imagen",
+      "descripcion": "descripcion",
+      "video": "Video"
+    },
+    {
+      "id": "2813740e-1e6d-45c9-9559-3723dcc0b4a8",
+      "titulo": "test botones",
+      "categoria": "Front end",
+      "imagen": "test botones",
+      "descripcion": "dsfeslkmlsd",
+      "video": "nuevo video"
     }
   ],
   "categorias": [
     "Front end",
     "Back end",
-    "Innovación y gestión",
-    "Cuentas",
-    "Arte"
+    "Innovación y gestión"
   ]
 }

@@ -1,0 +1,14 @@
+{
+    "cards": [{
+        "titulo": "¿Qué es Javascript?",
+        "categoria": "FRONT END",
+        "imagen": "url",
+        "video": "url",
+        "descripcion": "lorem ipsum"
+    }],
+    "categorias": [{
+        "front end": "FRONT END",
+        "back end": "FRONT END",
+        "innovación y gestión": "innovación y gestión"
+    }]
+}

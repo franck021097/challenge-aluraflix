@@ -1,4 +1,20 @@
+import { useState } from "react"
+import { useEffect } from "react"
+
+
 const CampoSelect = ({validoInvalido, value, nameProp, id, manejarCambio}) => {
+    
+    const [categorias, setCategorias] = useState([])
+
+    useEffect( ()=>{
+        const getCategorias= async () =>{
+            const respuesta = await fetch("http://localhost:3000/categorias")
+            const data = await respuesta.json()
+            setCategorias([...data])
+        }
+
+        getCategorias()
+    },[])
 
     return <select 
             className="campos" 
@@ -20,9 +36,10 @@ const CampoSelect = ({validoInvalido, value, nameProp, id, manejarCambio}) => {
             }} 
             >
         <option value="" disabled defaultValue="" hidden>Selecciona una categoria</option>
-        <option value="1">uno</option>
-        <option value="2">dos</option>
-        <option value="3">tres</option>
+        {
+            categorias.map( (categoria, index) =><option value={categoria} key={index} >{categoria}</option>)
+        }
+        
     </select>
 }
 

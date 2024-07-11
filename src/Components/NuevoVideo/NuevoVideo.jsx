@@ -7,6 +7,8 @@ import BotonFormulario from "../BotonFormulario"
 import { useState } from "react"
 import { Validacion } from "./validacion"
 import MensajeError from '../MensajeError/MensajeError'
+import { CrearNuevoRegistro } from "../../api/api.js";
+import { v4 as uuidv4 } from 'uuid';
 
 
 const ContainerNuevoVideo = styled.section`
@@ -200,10 +202,7 @@ const NuevoVideo = () => {
         ]);
 
         const respuesta = validacionOk[1]
-        //console.log("validacion ok");
-        validacionOk.map( (valor) => {
-            console.log(valor);
-        })
+
         setAHome(respuesta)
         mensajesError(validacionOk[0])
     }
@@ -242,9 +241,14 @@ const NuevoVideo = () => {
         
     }
 
-    if(regresaAHome){setTimeout(() => {
+
+    if(regresaAHome){
+        const id = uuidv4()
+        
+        CrearNuevoRegistro(id, nombre, imagen, video, categoria, descripcion)
+        setTimeout(() => {
         navegar('/')    
-    }, 500);}
+    }, 1000);}
 
     return <ContainerNuevoVideo>
         <Titulo>

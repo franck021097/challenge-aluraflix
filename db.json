@@ -1,14 +1,26 @@
 {
-    "cards": [{
-        "titulo": "¿Qué es Javascript?",
-        "categoria": "FRONT END",
-        "imagen": "url",
-        "video": "url",
-        "descripcion": "lorem ipsum"
-    }],
-    "categorias": [{
-        "front end": "FRONT END",
-        "back end": "FRONT END",
-        "innovación y gestión": "innovación y gestión"
-    }]
+  "cards": [
+    {
+      "titulo": "¿Qué es Javascript?",
+      "categoria": "FRONT END",
+      "imagen": "url",
+      "video": "url",
+      "descripcion": "lorem ipsum"
+    },
+    {
+      "id": "3c166930-0696-42c0-b1b3-4ec4c9640c20",
+      "titulo": "Titulo registo",
+      "categoria": "Front end",
+      "imagen": "Imagen nueva",
+      "descripcion": "Descripcion",
+      "video": "Video nuevo"
+    }
+  ],
+  "categorias": [
+    "Front end",
+    "Back end",
+    "Innovación y gestión",
+    "Cuentas",
+    "Arte"
+  ]
 }

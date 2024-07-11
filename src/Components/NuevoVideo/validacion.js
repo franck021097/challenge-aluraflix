@@ -2,7 +2,7 @@ export const Validacion = (valores) =>{
     let avanzar = true;
     const valoresValidos = valores.map( (valor) => {
         valor.mensaje = ""
-        if(valor.clave.length < 5) {
+        if(valor.clave.length == 0) {
             if((valor.campo == "categoria" && valor.clave.length == 0) || valor.campo != "categoria"){
                 avanzar = false;
                 valor.valorValido = "invalido"

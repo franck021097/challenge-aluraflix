@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react"
 import styled from "styled-components"
 import TituloCategoria from "../TituloCategoria"
+import { BorrarCard } from "../../api/api"
 
 const ContainerCategoria = styled.section`
     margin: 0px 50px 0px 50px;
@@ -10,6 +10,8 @@ const ContainerCategoria = styled.section`
         display: flex;
         gap: 30px;
         overflow: auto;
+        flex-direction: row;
+        padding: 15px;
     }
 `
 const Card = styled.div`
@@ -20,8 +22,6 @@ const Card = styled.div`
     box-shadow: 0px 0px 17px 8px #6BD1FF inset;
     border-radius: 15px;
     
-    
-
     img{
         width: 429.19px;
         height: 260px;
@@ -63,76 +63,34 @@ const Card = styled.div`
         width: 25px;
         height: 28px;
     }
-
-
-    
 `
 
 
 
-const Categoria = () => {
+const Categoria = ({categoria, cards, editar, irAEditar, valoresEditar, cardAVer}) => {
 
-    const [categorias, setCategorias] = useState([])
-
-    useEffect( ()=>{
-        const getCategorias= async () =>{
-            const respuesta = await fetch("http://localhost:3000/categorias")
-            const data = await respuesta.json()
-            setCategorias([...data])
-        }
-
-        getCategorias()
-    },[])
 
 
     return <>
     {
-        categorias.map( (categoria) => <ContainerCategoria>
+        cards.length > 0 && <>
+        <ContainerCategoria cards={cards}>
             <TituloCategoria categoria={categoria} className={categoria}/>
             <div className="container-card">
-                <Card>
-                    <a href="http://" target="_blank" rel="noopener noreferrer">
-                        <img src="img/test.png" alt="" />   
-                    </a>
-                    <div className="container-buttons">
-                        <button>
-                            <img src="img/trash.svg" alt="icono boton borrar" />
-                            Borrar
-                        </button>
-                        <button>
-                            <img src="img/edit.svg" alt="icono boton editar" />
-                            Editar
-                        </button>
-                    </div>
-                </Card>
-                <Card>
-                    <img src="img/test.png" alt="" />
-                    <div className="container-buttons">
-                        <button>
-                            <img src="img/trash.svg" alt="icono boton borrar" />
-                            Borrar
-                        </button>
-                        <button>
-                            <img src="img/edit.svg" alt="icono boton editar" />
-                            Editar
-                        </button>
-                    </div>
-                </Card>
-                <Card>
-                    <img src="img/test.png" alt="" />
-                    <div className="container-buttons">
-                        <button>
-                            <img src="img/trash.svg" alt="icono boton borrar" />
-                            Borrar
-                        </button>
-                        <button>
-                            <img src="img/edit.svg" alt="icono boton editar" />
-                            Editar
-                        </button>
-                    </div>
-                </Card>
+            {
+                cards.map( card => {
+                    return <Card key={card.id}>
+                        <img src={card.imagen} alt="imagen de referencia" onClick={() => cardAVer(card)} />
+                        <div className="container-buttons">
+                            <button onClick={()=>BorrarCard(card.id)}> <img src="img/trash.svg" alt="boton eliminar" />Eliminar</button>
+                            <button onClick={() => { irAEditar(!editar); valoresEditar(card) }}><img src="img/edit.svg" alt="boton editar" />Editar</button>
+                        </div>
+                        </Card>
+                })
+            }
             </div>
-            </ContainerCategoria>)    
+        </ContainerCategoria>
+        </>
     }
     </>
 }

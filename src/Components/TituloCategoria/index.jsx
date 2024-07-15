@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 const TituloComponent = styled.div`
     background-color: transparent;
-    width: 430px;
+    max-width: 430px;
     height: 70px;
     margin: 40px 0;
     

@@ -1,27 +1,52 @@
 {
   "cards": [
     {
-      "titulo": "¿Qué es Javascript?",
-      "categoria": "FRONT END",
-      "imagen": "url",
-      "video": "url",
-      "descripcion": "lorem ipsum"
+      "titulo": "Deadpool",
+      "categoria": "Front end",
+      "imagen": "img/deadpool.jpg",
+      "descripcion": "El nuevo trailer de Deadpool wuuu",
+      "video": "https://www.youtube.com/watch?v=kxyyKU8rgaU",
+      "id": "9cff1708-00df-44f5-b669-cdc7e5566c6c"
     },
     {
-      "id": "9cff1708-00df-44f5-b669-cdc7e5566c6c",
-      "titulo": "titulo nuevo",
+      "id": "e354b4da-264c-46f7-a831-d124d505bc55",
+      "titulo": "prueba front 1",
       "categoria": "Front end",
-      "imagen": "Imagen",
-      "descripcion": "descripcion",
-      "video": "Video"
+      "imagen": "img/test.png",
+      "descripcion": "sd fad fas df sd f",
+      "video": "sad dsf sad fa"
     },
     {
-      "id": "2813740e-1e6d-45c9-9559-3723dcc0b4a8",
-      "titulo": "test botones",
+      "id": "5139e66c-1d61-42f3-9532-300baa1b6cb6",
+      "titulo": "sdf ad fd f",
+      "categoria": "Back end",
+      "imagen": "img/test.png",
+      "descripcion": "as dfas fd ",
+      "video": " sadf asdf a"
+    },
+    {
+      "id": "2f403949-94b8-46c1-b40e-2e75318c41f9",
+      "titulo": "Titulo 3",
       "categoria": "Front end",
-      "imagen": "test botones",
-      "descripcion": "dsfeslkmlsd",
-      "video": "nuevo video"
+      "imagen": "img/test.png",
+      "descripcion": "ksdj fasdfjsdh afj",
+      "video": "sda fkasj "
+    },
+    {
+      "id": "8061f5bd-f0bf-40d8-9046-269c4f28297e",
+      "titulo": "titulo a borrar",
+      "categoria": "Innovación y gestión",
+      "imagen": "img/test.png",
+      "descripcion": "sin dato",
+      "video": "culaquier video"
+    },
+    {
+      "id": "094f0654-32f3-4d92-9089-3fa0b393130b",
+      "titulo": "Nuevo video Listo",
+      "categoria": "Innovación y gestión",
+      "imagen": "img/deadpool.jpg",
+      "descripcion": "img/deadpool.jpg",
+      "video": "img/deadpool.jpg"
     }
   ],
   "categorias": [

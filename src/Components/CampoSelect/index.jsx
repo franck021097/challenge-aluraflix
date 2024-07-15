@@ -2,7 +2,7 @@ import { useState } from "react"
 import { useEffect } from "react"
 
 
-const CampoSelect = ({validoInvalido, value, nameProp, id, manejarCambio}) => {
+const CampoSelect = ({verifica, className="campos",validoInvalido, value, nameProp, id, manejarCambio}) => {
     
     const [categorias, setCategorias] = useState([])
 
@@ -17,10 +17,11 @@ const CampoSelect = ({validoInvalido, value, nameProp, id, manejarCambio}) => {
     },[])
 
     return <select 
-            className="campos" 
+            className={className} 
             value={value} 
             required 
             onChange={(e) => { 
+                verifica([e.target.value, e.target.id])
                 manejarCambio(e.target.value)
                 validoInvalido(() => {
                     const valor = e.target.checkValidity() ? "valido" : "invalido"

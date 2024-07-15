@@ -156,7 +156,7 @@ const ContainerFormulario = styled.form`
 
 `
 
-const LabelInput = styled.label`
+export const LabelInput = styled.label`
     color: #fff;
     display: block;
     
@@ -284,34 +284,34 @@ const NuevoVideo = () => {
             <div className="container-flex">
                 <div className='div-container-nombre' >
                     <LabelInput htmlFor="nombre">Título</LabelInput>
-                    <CampoTexto className="campos" placeholder={"ingrese el título"} id="nombre" name="nombre" value={nombre} manejarCambio={setNombre} validoInvalido={setNombreValido} />
+                    <CampoTexto className="campos" placeholder={"ingrese el título"} id="nombre" name="nombre" value={nombre} manejarCambio={setNombre} validoInvalido={setNombreValido} verifica={()=>{}} />
                     <MensajeError mensaje={mensajeErrorCampoNombre}/>
                 </div>
 
                 <div>
                     <LabelInput htmlFor="categoria">Categoria</LabelInput>
                     <CampoSelect name="categoria" id="categoria" value={categoria} manejarCambio={setCategoria}
-                    validoInvalido={setCategoriaValido}/>
+                    validoInvalido={setCategoriaValido} verifica={()=>{}}/>
                     <MensajeError mensaje={mensajeErrorCampoCategoria}/>
                 </div>
                 
                 
                 <div>
                     <LabelInput htmlFor="imagen">Imagen</LabelInput>
-                    <CampoTexto className="campos" placeholder={"ingrese el enlace de la imagen"} name="imagen" id="imagen" value={imagen} manejarCambio={setImagen} validoInvalido={setImagenValido}/>
+                    <CampoTexto className="campos" placeholder={"ingrese el enlace de la imagen"} name="imagen" id="imagen" value={imagen} manejarCambio={setImagen} validoInvalido={setImagenValido} verifica={()=>{}}/>
                     <MensajeError mensaje={mensajeErrorCampoImagen}/>
                 </div>                
                 
                 <div>
                     <LabelInput htmlFor="video">Video</LabelInput>
-                    <CampoTexto className="campos" placeholder={"ingrese el enlace del video"} name="video" id="video" value={video} manejarCambio={setVideo} validoInvalido={setVideoValido} />
+                    <CampoTexto className="campos" placeholder={"ingrese el enlace del video"} name="video" id="video" value={video} manejarCambio={setVideo} validoInvalido={setVideoValido} verifica={()=>{}}/>
                     <MensajeError mensaje={mensajeErrorCampoVideo}/>
                 </div>
                 
                 
                 <div>
                     <LabelInput htmlFor="descripcion">Descripción</LabelInput>
-                    <CampoTextArea className="campos" placeholder={"¿De qué se trata este vídeo?"} name="descripcion" id="descripcion" value={descripcion} manejarCambio={setDescripcion} validoInvalido={setDescripcionValido} />
+                    <CampoTextArea className="campos" placeholder={"¿De qué se trata este vídeo?"} name="descripcion" id="descripcion" value={descripcion} manejarCambio={setDescripcion} validoInvalido={setDescripcionValido} verifica={()=>{}}/>
                     <MensajeError mensaje={mensajeErrorCampoDescripcion}/>
                 </div>
 

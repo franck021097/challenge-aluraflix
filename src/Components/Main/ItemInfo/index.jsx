@@ -6,7 +6,9 @@ const ContainerInfo = styled.div`
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
-    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 50px 30px;
 
     .imagen-item{
         border-radius: 20px;
@@ -16,12 +18,14 @@ const ContainerInfo = styled.div`
 const CardInfo = styled.div`
     
     font-family: "Roboto", sans-serif;
-    width: 450px;
+    max-width: 50%;
     color: #fff;
-
+    box-sizing: border-box;
+    padding: 50px 30px;
 
 
     .titulo-descripcion{
+        
         font-size: 46px;
         font-weight: 400;
         line-height: 53.91px;
@@ -34,6 +38,25 @@ const CardInfo = styled.div`
         font-weight: 300;
         line-height: 21.09px;
         text-align: left;
+        
+    }
+
+    .Front{
+        background: #6BD1FF!important;
+        padding: 0 10px;
+        max-width: 100%;
+    }
+
+    .Back{
+        background: #00C86F;
+        padding: 0 10px;
+        max-widt100%h
+    }
+
+    .Innovación{
+        background: #FFBA05;
+        padding: 0 10px;
+        max-widt100%h
     }
 
 `
@@ -45,29 +68,35 @@ const TemaItem = styled.div`
     line-height: 56.25px;
     align-items: center;
     justify-content: center;
-    width: 296.82px;
+    min-width: 296.82px;
+    max-width: 10%;
     height: 92px;
     border-radius: 15px;
-    background: #6BD1FF;
     user-select: none;
+    box-sizing: border-box;
+
+    
 `
 
 
-const ItemInfo = () => {
+const ItemInfo = ({cardSeleccionada}) => {
+    const {titulo="Challenge React", video="https://www.youtube.com/@AluraLatam", imagen="img/player.png", categoria="Front end", descripcion="Este challenge es una forma de aprendizaje. Es un mecanismo donde podrás comprometerte en la resolución de un problema para poder aplicar todos los conocimientos adquiridos en la formación React."} = cardSeleccionada
+
     return <>
-        <ContainerInfo>
+        <ContainerInfo cardSeleccionada={cardSeleccionada}>
             <CardInfo >
-                <TemaItem>
-                    <span>FRONT END</span>
+                <TemaItem className={categoria}>
+                    
+                    <span >{categoria}</span>
                 </TemaItem>
 
-                <p className="titulo-descripcion">Challenge React</p>
+                <p className="titulo-descripcion">{titulo}</p>
 
-                <p className="descripcion-item">Este challenge es una forma de aprendizaje. Es un mecanismo donde podrás comprometerte en la resolución de un problema para poder aplicar todos los conocimientos adquiridos en la formación React.</p>
+                <p className="descripcion-item">{descripcion}</p>
             </CardInfo>
 
-                <a href="http://" target="_blank" rel="noopener noreferrer">
-                    <img src="img/player.png" alt="imagen item" className="imagen-item"/>
+                <a href={video} target="_blank" rel="noopener noreferrer">
+                    <img src={imagen} alt="imagen item" className="imagen-item"/>
                 </a>
         </ContainerInfo>
     </>

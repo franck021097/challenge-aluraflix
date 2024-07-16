@@ -17,6 +17,11 @@ const SectionInfo = styled.section`
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+
+    @media (max-width: 700px) {
+        display: none;
+        
+    }
 `
 
 const SectionCategories = styled.section`
@@ -141,6 +146,7 @@ const SectionCategories = styled.section`
         background: #232323;
         
     }
+
 `
 
 const Main = () => {

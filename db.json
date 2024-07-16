@@ -47,6 +47,14 @@
       "imagen": "img/deadpool.jpg",
       "descripcion": "img/deadpool.jpg",
       "video": "img/deadpool.jpg"
+    },
+    {
+      "titulo": "Intensamente 2",
+      "categoria": "Innovación y gestión",
+      "imagen": "https://cdn.mos.cms.futurecdn.net/kNK5n9r72kMyG9CFEU6z7C-1200-80.jpg",
+      "descripcion": "Es el trailer de la nueva pelicula de intensamente 2, creada por pixar. El trailer muestra la vida de una adolescente vista desde la perspectiva de unos personajes ficticios en la mente del personaje principal. ",
+      "video": "https://www.youtube.com/watch?v=9bol4Yyx9Gs",
+      "id": "f5eb9a73-114c-4318-aff8-2765b1e7ba79"
     }
   ],
   "categorias": [

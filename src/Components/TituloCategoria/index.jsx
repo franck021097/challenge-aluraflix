@@ -11,9 +11,11 @@ const TituloComponent = styled.div`
         justify-content: center;
         align-items: center;
         max-width: 100vw;
+        padding: 45px 10px;
         width: 100%;
         height: 100%;
         font-family: "Roboto", sans-serif;
+        box-sizing: border-box;
     }
 
     h1{

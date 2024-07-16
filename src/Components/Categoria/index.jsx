@@ -3,7 +3,7 @@ import TituloCategoria from "../TituloCategoria"
 import { BorrarCard } from "../../api/api"
 
 const ContainerCategoria = styled.section`
-    margin: 0px 50px 0px 50px;
+    margin: 0px 20px 0px 20px;
     padding: 50px 0;
     
     .container-card{
@@ -12,20 +12,23 @@ const ContainerCategoria = styled.section`
         overflow: auto;
         flex-direction: row;
         padding: 15px;
+        scroll-snap-type: x mandatory;
     }
 `
 const Card = styled.div`
     background: #fff;
-    width: 429.19px;
-    height: 320px;
+    width: 430px;
+    height: 324px;
     border: 5px solid #6BD1FF;
     box-shadow: 0px 0px 17px 8px #6BD1FF inset;
     border-radius: 15px;
+    scroll-snap-align: center;
     
-    img{
-        width: 429.19px;
+    .card-celulares img, .card-tablets{
+        width: 430px;
         height: 260px;
-
+        border-radius: 15px;
+        
     }
 
     .container-buttons{
@@ -63,6 +66,40 @@ const Card = styled.div`
         width: 25px;
         height: 28px;
     }
+
+
+    .card-celulares{
+        display: none;
+    }
+
+    @media (max-width: 700px) {
+        width: 270px;
+        height: 174px;
+        
+        .card-celulares img{
+            width: 270px;
+            height: 139px;
+        }
+
+        .container-buttons{
+            margin-top: 2px;
+            height: calc(100% - 140px);
+        }
+
+        .card-celulares{
+            display: inline;
+        }
+
+        .card-tablets{
+            display: none;
+        }
+
+        button img{
+        width: 20px;
+        height: 23px;
+    }
+        
+    }
 `
 
 
@@ -80,7 +117,10 @@ const Categoria = ({categoria, cards, editar, irAEditar, valoresEditar, cardAVer
             {
                 cards.map( card => {
                     return <Card key={card.id}>
-                        <img src={card.imagen} alt="imagen de referencia" onClick={() => cardAVer(card)} />
+                        <a className="card-celulares" href={card.video} target="_blank">
+                            <img src={card.imagen} alt="imagen de referencia" onClick={() => cardAVer(card)} />
+                        </a>
+                        <img className="card-tablets" src={card.imagen} alt="imagen de referencia" onClick={() => {cardAVer(card); scrollTo({top: 100, behavior: "smooth"})}} />
                         <div className="container-buttons">
                             <button onClick={()=>BorrarCard(card.id)}> <img src="img/trash.svg" alt="boton eliminar" />Eliminar</button>
                             <button onClick={() => { irAEditar(!editar); valoresEditar(card) }}><img src="img/edit.svg" alt="boton editar" />Editar</button>

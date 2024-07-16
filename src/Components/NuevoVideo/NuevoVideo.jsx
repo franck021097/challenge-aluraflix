@@ -38,6 +38,8 @@ const Titulo = styled.div`
 
 const ContainerFormulario = styled.form`
     color: #fff;
+    width: 100%;
+    
 
     .titulo-formulario{
         border-top: 3px solid #262626;
@@ -55,6 +57,12 @@ const ContainerFormulario = styled.form`
         display: flex;
         flex-wrap: wrap;
         gap: 60px 20px;
+        width: 100%;
+        
+    }
+
+    .container-flex div{
+        width: 100%;
     }
 
     .campos{
@@ -152,6 +160,13 @@ const ContainerFormulario = styled.form`
     .container-botones input:active{
         border: 3px solid #2271D1;
         color:#2271D1;
+    }
+
+    @media (max-width: 700px) {
+        .campos{
+            max-width: 100%;
+            width: 100%;
+        }   
     }
 
 `

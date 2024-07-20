@@ -1,5 +1,5 @@
 export const CrearNuevoRegistro = async (id, nombre, imagen, video, categoria, descripcion) => {
-    const conexion= await fetch("http://localhost:3000/cards",{
+    const conexion= await fetch("https://my-json-server.typicode.com/franck021097/api-aluraflix-dbJson/cards",{
     method:"POST",
     headers:{
         "Content-Type": "application/json",
@@ -17,14 +17,14 @@ export const CrearNuevoRegistro = async (id, nombre, imagen, video, categoria, d
 }
 
 export const BorrarCard = async (id) =>{
-    const conexion = await fetch("http://localhost:3000/cards/"+id,{
+    const conexion = await fetch("https://my-json-server.typicode.com/franck021097/api-aluraflix-dbJson/cards/"+id,{
     method: "DELETE",
     })
 }
 
 
 export const ActualizarRegistro = async (id, nombre, imagen, video, categoria, descripcion) => {
-    const conexion = await fetch("http://localhost:3000/cards/"+id,{
+    const conexion = await fetch("https://my-json-server.typicode.com/franck021097/api-aluraflix-dbJson/cards/"+id,{
     method:"PUT",
     headers:{
         "Content-Type": "application/json",

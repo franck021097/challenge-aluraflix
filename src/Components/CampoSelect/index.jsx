@@ -8,8 +8,10 @@ const CampoSelect = ({verifica, className="campos",validoInvalido, value, namePr
 
     useEffect( ()=>{
         const getCategorias= async () =>{
-            const respuesta = await fetch("http://localhost:3000/categorias")
+            const respuesta = await fetch("https://my-json-server.typicode.com/franck021097/api-aluraflix-dbJson/categorias")
             const data = await respuesta.json()
+            console.log([...data]);
+            
             setCategorias([...data])
         }
 

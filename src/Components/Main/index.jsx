@@ -173,7 +173,7 @@ const Main = () => {
 
     useEffect(() => {
         const getCategorias = async () => {
-            const respuesta = await fetch("http://localhost:3000/categorias")
+            const respuesta = await fetch("https://my-json-server.typicode.com/franck021097/api-aluraflix-dbJson/categorias")
             const data = await respuesta.json()
             setCategorias([...data])
 
@@ -185,7 +185,7 @@ const Main = () => {
     const [cards, setCards] = useState([])
 
     const getCards = async () => {
-        const respuesta = await fetch("http://localhost:3000/cards")
+        const respuesta = await fetch("https://my-json-server.typicode.com/franck021097/api-aluraflix-dbJson/cards")
         const data = await respuesta.json()
         setCards([...data])
     }

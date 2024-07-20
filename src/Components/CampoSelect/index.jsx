@@ -38,7 +38,7 @@ const CampoSelect = ({verifica, className="campos",validoInvalido, value, namePr
             >
         <option value="" disabled defaultValue="" hidden>Selecciona una categoria</option>
         {
-            categorias.map( (categoria, index) =><option value={categoria} key={index} >{categoria}</option>)
+            categorias.map( (categoria, index) =><option value={categoria.name} key={index} >{categoria.name}</option>)
         }
         
     </select>

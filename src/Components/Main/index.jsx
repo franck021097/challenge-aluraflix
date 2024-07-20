@@ -273,9 +273,9 @@ const Main = () => {
         </SectionInfo>
         <SectionCategories>
             {
-                categorias.map((categoria, index) => {
+                categorias.map((categoria = categoria.name, index) => {
                     return <>
-                        <Categoria key={index} categoria={categoria} cards={cards.filter(card => card.categoria == categoria)} editar={editar} irAEditar={setEditar} valoresEditar={inicializaValoresAEditar} cardAVer={inicializaValoresAEditar}/>
+                        <Categoria key={index} categoria={categoria.name} cards={cards.filter(card => card.categoria == categoria.name)} editar={editar} irAEditar={setEditar} valoresEditar={inicializaValoresAEditar} cardAVer={inicializaValoresAEditar}/>
 
 
                         {editar && <div className="pantalla-editar">

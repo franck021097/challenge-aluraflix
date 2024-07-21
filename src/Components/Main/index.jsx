@@ -185,7 +185,7 @@ const Main = () => {
     const [cards, setCards] = useState([])
 
     const getCards = async () => {
-        const respuesta = await fetch("https://my-json-server.typicode.com/franck021097/api-aluraflix-dbJson/cards")
+        const respuesta = await fetch("https://api-alura-dinamico.vercel.app/cards")
         const data = await respuesta.json()
         setCards([...data])
     }
